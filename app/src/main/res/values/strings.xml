@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Triludos</string>
+    <string name="settings">Settings</string>
+    <string name="sound">Sound</string>
+    <string name="music">Music</string>
+    <string name="language">Language</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="player1">Player1:</string>
+    <string name="player2">Player2:</string>
+    <string name="click_again">Try clicking another box!</string>
+    <string name="player">"Player "</string>
+    <string name="won">" won"</string>
+    <string name="draw">It\'s a draw</string>
+    <string name="pig_dice_rule1">Two standard dice are rolled. If neither shows a 1, their sum is added to the turn total</string>
+    <string name="pig_dice_rule2">If a single 1 is rolled, the player scores nothing and the turn ends</string>
+    <string name="pig_dice_rule3">If two 1s are rolled, the player’s entire score is lost, and the turn ends</string>
+    <string name="pig_dice_rules">Game rules</string>
+    <string name="feature_unavailable">This feature is NOT available on this device</string>
+    <string name="loading">Loading</string>
+    <string name="correct_word">The word is :</string>
+    <string name="hangman_completed">Congratulations! You have completed the game. You can always come back and challenge your friends</string>
+    <string name="hangman_rule">The object of the game is to guess the word before the character is hung.\nEach time a correct letter is guessed from the word, the corresponding empty dashes will be filled, the player wins 1 point and continue playing.\nThe first player to guess the word wins 3 points and will be able to start guessing the next word.\nIf the letter doesn\'t belong to the word, another appendage will be added to the character and the player will loose his turn.\nIf the stick man is completed before the word is guessed, then the player will loose.</string>
+
+
+</resources>

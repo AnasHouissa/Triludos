@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/activity_hangman.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/activity_home_menu.xml" value="0.12" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/activity_pig_dice.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/activity_settings.xml" value="0.27291666666666664" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/activity_tic_tac_toe.xml" value="0.18985334918747523" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/custom_dialog_win.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/custom_dialog_win2.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/custom_hint_toast.xml" value="0.128125" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/how_to_play_hangman.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjectsJava/Triludos/app/src/main/res/layout/how_to_play_pig_dice.xml" value="0.1" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/drawable-nodpi/ic_close.xml" value="0.2145" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout-land/activity_hangman.xml" value="0.16" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout-land/activity_home_menu.xml" value="0.16" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout-land/activity_pig_dice.xml" value="0.18" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout-land/activity_settings.xml" value="0.14" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout-land/activity_tic_tac_toe.xml" value="0.12" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout-land/custom_dialog.xml" value="0.25" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/activity_hangman.xml" value="0.19" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/activity_home_menu.xml" value="0.16" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/activity_pig_dice.xml" value="0.25" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/activity_settings.xml" value="0.25" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/activity_tic_tac_toe.xml" value="0.33" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/custom_dialog.xml" value="0.18" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/custom_dialog_happy.xml" value="0.1" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/custom_dialog_sad.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/custom_dialog_winner.xml" value="0.33" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/how_to_play_pig_dice.xml" value="0.25" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/how_to_play_pig_dice_dialog.xml" value="0.38645833333333335" />
+        <entry key="..\:/Users/MeriamBI/AndroidStudioProjects/Triludos/app/src/main/res/layout/layout_custom.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

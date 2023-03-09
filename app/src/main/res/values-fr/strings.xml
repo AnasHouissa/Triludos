@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Triludos</string>
+    <string name="settings">Paramètres</string>
+    <string name="sound">Son</string>
+    <string name="music">Musique</string>
+    <string name="language">Langue</string>
+    <string name="player_1">Joueur 1</string>
+    <string name="player_2">Joueur 2</string>
+    <string name="player1">Joueur1:</string>
+    <string name="player2">Joueur2:</string>
+    <string name="click_again">Choisissez une autre case!</string>
+    <string name="player">"Joueur "</string>
+    <string name="won">"\ a gagné"</string>
+    <string name="draw">Égalité</string>
+    <string name="pig_dice_rule1">Deux dés standard sont lancés. Si ni l\'un ni l\'autre ne montre un 1, leur somme est ajoutée au total du tour</string>
+    <string name="pig_dice_rule2">Si un seul 1 est obtenu, le joueur ne marque rien et le tour se termine</string>
+    <string name="pig_dice_rule3">Si deux 1 sont obtenus, le score entier du joueur est perdu et le tour se termine</string>
+    <string name="pig_dice_rules">Règles du jeu</string>
+    <string name="feature_unavailable">Cette fonctionnalité n\'est pas disponible sur cet appareil</string>
+    <string name="loading">Chargement</string>
+    <string name="correct_word">Le mot est :</string>
+    <string name="hangman_completed">Félicitations! Vous avez terminé le jeu! Vous pouvez toujours revenir et défier vos amis.</string>
+    <string name="hangman_rule">Le but du jeu est de deviner le mot avant que le personnage ne soit pendu.\nChaque fois qu\'une lettre correcte est devinée, les tirets vides correspondants seront remplis, le joueur gagne 1 point et continue à deviner.\nLe premier joueur à deviner le mot gagne 3 points et pourra commencer à deviner le mot suivant.\nSi la lettre n\'appartient pas au mot, un autre appendice sera ajouté au personnage et le joueur perdra son tour.\nSi le personnage est terminé avant que le mot ne soit deviné, le joueur actuel perdra.</string>
+
+</resources>

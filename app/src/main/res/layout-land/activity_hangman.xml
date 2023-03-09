@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chalk_board_bg"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".HangmanActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/back"
+            app:layout_constraintBottom_toTopOf="@id/h00"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReplay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/restart"
+            app:layout_constraintBottom_toTopOf="@id/h00"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h001"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0" />
+
+        <TextView
+            android:id="@+id/tvPlayer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chalkduster"
+            android:text="@string/player1"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/h11"
+            app:layout_constraintEnd_toStartOf="@id/tvScorePl1"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/col0"
+            app:layout_constraintTop_toBottomOf="@id/h001" />
+
+        <TextView
+            android:id="@+id/tvScorePl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chalkduster"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/h11"
+            app:layout_constraintEnd_toStartOf="@id/col3"
+            app:layout_constraintStart_toEndOf="@id/tvPlayer1"
+            app:layout_constraintTop_toBottomOf="@id/h001" />
+
+        <TextView
+            android:id="@+id/tvPlayer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chalkduster"
+            android:text="@string/player2"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/h11"
+            app:layout_constraintEnd_toStartOf="@id/tvScorePl2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/h001" />
+
+        <TextView
+            android:id="@+id/tvScorePl2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chalkduster"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/h11"
+            app:layout_constraintEnd_toStartOf="@id/col6"
+            app:layout_constraintStart_toEndOf="@id/tvPlayer2"
+            app:layout_constraintTop_toBottomOf="@id/h001" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <ImageView
+            android:id="@+id/ivHangmanLeft"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/gallow"
+            app:layout_constraintBottom_toTopOf="@+id/h22"
+            app:layout_constraintDimensionRatio="9:12"
+            app:layout_constraintLeft_toRightOf="@id/col0"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/h11" />
+
+        <ImageView
+            android:id="@+id/ivHangmanRight"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:rotationY="180"
+            android:src="@drawable/gallow"
+            app:layout_constraintBottom_toTopOf="@+id/h22"
+            app:layout_constraintDimensionRatio="9:12"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col6"
+            app:layout_constraintTop_toBottomOf="@id/h11" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h22"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.365" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h33"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.39" />
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPlayer1Turn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/chalk_line_green"
+            app:layout_constraintBottom_toTopOf="@+id/h33"
+            app:layout_constraintDimensionRatio="12:1"
+            app:layout_constraintLeft_toRightOf="@id/col0"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/h22" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPlayer2Turn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/chalk_line_green"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/h33"
+            app:layout_constraintDimensionRatio="12:1"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col6"
+            app:layout_constraintTop_toBottomOf="@id/h22" />
+
+        <TextView
+            android:id="@+id/tvWordToGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/chalkduster"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="hello"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/l0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/h33" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnA"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="a"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col0"
+            app:layout_constraintRight_toLeftOf="@id/col1"
+            app:layout_constraintTop_toBottomOf="@id/l0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnB"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="b"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col1"
+            app:layout_constraintRight_toLeftOf="@id/col2"
+            app:layout_constraintTop_toBottomOf="@id/l0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnC"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="c"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col2"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/l0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnD"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="d"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col4"
+            app:layout_constraintTop_toBottomOf="@id/l0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnE"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="e"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col4"
+            app:layout_constraintRight_toLeftOf="@id/col5"
+            app:layout_constraintTop_toBottomOf="@id/l0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnF"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="f"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col5"
+            app:layout_constraintRight_toLeftOf="@id/col6"
+            app:layout_constraintTop_toBottomOf="@id/l0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnG"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="g"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col0"
+            app:layout_constraintRight_toLeftOf="@id/col1"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnH"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="h"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col1"
+            app:layout_constraintRight_toLeftOf="@id/col2"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnI"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="i"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col2"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnJ"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="j"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col4"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnK"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="k"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col4"
+            app:layout_constraintRight_toLeftOf="@id/col5"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnL"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="l"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l2"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col5"
+            app:layout_constraintRight_toLeftOf="@id/col6"
+            app:layout_constraintTop_toBottomOf="@id/l1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnM"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="m"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col0"
+            app:layout_constraintRight_toLeftOf="@id/col1"
+            app:layout_constraintTop_toBottomOf="@id/l2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnN"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="n"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col1"
+            app:layout_constraintRight_toLeftOf="@id/col2"
+            app:layout_constraintTop_toBottomOf="@id/l2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnO"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="o"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col2"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/l2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnP"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="p"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col4"
+            app:layout_constraintTop_toBottomOf="@id/l2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnQ"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="q"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col4"
+            app:layout_constraintRight_toLeftOf="@id/col5"
+            app:layout_constraintTop_toBottomOf="@id/l2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnR"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="r"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l3"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col5"
+            app:layout_constraintRight_toLeftOf="@id/col6"
+            app:layout_constraintTop_toBottomOf="@id/l2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnS"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="s"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col0"
+            app:layout_constraintRight_toLeftOf="@id/col1"
+            app:layout_constraintTop_toBottomOf="@id/l3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnT"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="t"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col1"
+            app:layout_constraintRight_toLeftOf="@id/col2"
+            app:layout_constraintTop_toBottomOf="@id/l3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnU"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="u"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col2"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/l3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnV"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="v"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col4"
+            app:layout_constraintTop_toBottomOf="@id/l3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnW"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="w"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col4"
+            app:layout_constraintRight_toLeftOf="@id/col5"
+            app:layout_constraintTop_toBottomOf="@id/l3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnX"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="X"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col5"
+            app:layout_constraintRight_toLeftOf="@id/col6"
+            app:layout_constraintTop_toBottomOf="@id/l3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnY"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="Y"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col2"
+            app:layout_constraintRight_toLeftOf="@id/col3"
+            app:layout_constraintTop_toBottomOf="@id/l4" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnZ"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="3dp"
+            android:background="@drawable/chalk_frame"
+            android:fontFamily="@font/chalkduster"
+            android:text="Z"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@id/l5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toRightOf="@id/col3"
+            app:layout_constraintRight_toLeftOf="@id/col4"
+            app:layout_constraintTop_toBottomOf="@id/l4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.06" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.205" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.642" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.79" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/col6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.70" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.90" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/l5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHowToPlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/info"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/h6" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnHint"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/h6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/splashLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/test"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:src="@drawable/loading"
+            app:layout_constraintBottom_toTopOf="@+id/h2"
+            app:layout_constraintEnd_toStartOf="@+id/v2"
+            app:layout_constraintStart_toStartOf="@+id/v1"
+            app:layout_constraintTop_toTopOf="@+id/h1" />
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/chalkduster"
+            android:text="@string/loading"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/h3"
+            app:layout_constraintEnd_toStartOf="@+id/v4"
+            app:layout_constraintStart_toStartOf="@+id/v3"
+            app:layout_constraintTop_toTopOf="@+id/h2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.31" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/v4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.69" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.43" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.57" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/h3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

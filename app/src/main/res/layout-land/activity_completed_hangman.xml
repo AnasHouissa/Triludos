@@ -1,0 +1,167 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chalk_board_bg"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".CongratsHangmanActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/back"
+        app:layout_constraintBottom_toTopOf="@id/h1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReplay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/restart"
+        app:layout_constraintBottom_toTopOf="@id/h1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvLoading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/chalkduster"
+        android:gravity="center"
+        android:text="@string/hangman_completed"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/h2"
+        app:layout_constraintEnd_toStartOf="@+id/v4"
+        app:layout_constraintStart_toEndOf="@+id/v3"
+        app:layout_constraintTop_toBottomOf="@id/h1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chalkduster"
+        android:text="Final Score :"
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/hplayers"
+        app:layout_constraintEnd_toStartOf="@+id/v4"
+        app:layout_constraintStart_toStartOf="@+id/v3"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoading" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vmid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hplayers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.54" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chalkduster"
+        android:text="@string/player1"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/hscore"
+        app:layout_constraintEnd_toStartOf="@+id/vmid"
+        app:layout_constraintStart_toStartOf="@+id/v3"
+        app:layout_constraintTop_toTopOf="@+id/hplayers" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chalkduster"
+        android:text="@string/player2"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/hscore"
+        app:layout_constraintEnd_toStartOf="@+id/v4"
+        app:layout_constraintStart_toStartOf="@+id/vmid"
+        app:layout_constraintTop_toTopOf="@+id/hplayers" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hscore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <TextView
+        android:id="@+id/tvScoreP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chalkduster"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/h3"
+        app:layout_constraintEnd_toStartOf="@+id/v4"
+        app:layout_constraintStart_toStartOf="@+id/vmid"
+        app:layout_constraintTop_toTopOf="@+id/hscore" />
+
+    <TextView
+        android:id="@+id/tvScoreP1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/chalkduster"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/h3"
+        app:layout_constraintEnd_toStartOf="@+id/vmid"
+        app:layout_constraintStart_toStartOf="@+id/v3"
+        app:layout_constraintTop_toTopOf="@+id/hscore" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
